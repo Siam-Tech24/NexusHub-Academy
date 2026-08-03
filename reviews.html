@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusHub Academy-Reviews</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="nightmode.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+        /* main content  */
+
+        body {
+            transition: 0.3s ease-out;
+        }
+
+        article {
+            color: rgb(43, 5, 5);
+            width: 100%;
+            overflow-x: hidden;
+            transition: 0.3s ease-out
+        }
+
+
+        .section_breaker {
+            height: 50px;
+        }
+
+
+
+        /* footer */
+
+        footer {
+            text-align: center;
+        }
+
+
+        /* dark mode  */
+
+        .nightbody article {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>NexusHub Academy</h1>
+            <div id="nav_button">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="courses.html">See Courses</a></li>
+                    <li class="current_site"><a href="">Reviews</a></li>
+                </ul>
+            </div>
+            <button class="sidetoggle" id="sidetoggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="sidebarcontainer" id="sidebarcontainer">
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="contacts.html">
+                        CONTACTS
+                    </a>
+                </li>
+                <li>
+                    <a href="courses.html">
+                        SEE COURSES
+                    </a>
+                </li>
+                <li id="current_site">
+                    <a href="">
+                        REVIEWS
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <script>
+        const sidetoggle = document.getElementById("sidetoggle");
+        const sidebar = document.getElementById("sidebar");
+
+        sidetoggle.addEventListener("click", () => {
+            sidetoggle.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        })
+    </script>
+    <main>
+        <div class="mode_container">
+            <button class="mode_button" onclick="mode_change()" id="mode_button">
+                <img src="daymode.png" alt="" id="mode_image">
+                <h3>Day Mode</h3>
+            </button>
+        </div>
+        <div class="section_breaker"></div>
+        <center><h1>This Page Is Under Development</h1></center>
+    </main>
+    <div class="section_breaker"></div>
+    <hr>
+    <div class="section_breaker"></div>
+    <footer>
+        &copy;2026 NexusHub Academy - All rights reserved
+    </footer>
+    <div class="section_breaker"></div>
+    <script>
+        let mode = localStorage.getItem("nexushub_academy_display_mode");
+        const image = document.getElementById("mode_image");
+        const mode_button = document.getElementById("mode_button");
+        const main = document.querySelector("main");
+
+
+        if (mode === "night") {
+            document.body.classList.add("nightbody");
+            image.src = "nightmode.png";
+            mode_button.classList.add("mode_button_night");
+            mode_button.querySelector("h3").innerText = "NIGHT MODE";
+        } else {
+            document.body.classList.remove("nightbody");
+            image.src = "daymode.png";
+            mode_button.classList.remove("mode_button_night");
+            mode_button.querySelector("h3").innerText = "DAY MODE";
+        }
+
+
+        function mode_change() {
+            let currentMode = localStorage.getItem("nexushub_academy_display_mode");
+
+
+            if (currentMode !== "night") {
+                document.body.classList.add("nightbody");
+                localStorage.setItem("nexushub_academy_display_mode", "night");
+                image.src = "nightmode.png";
+                mode_button.classList.add("mode_button_night");
+                mode_button.querySelector("h3").innerText = "NIGHT MODE";
+            } else {
+
+                document.body.classList.remove("nightbody");
+                localStorage.setItem("nexushub_academy_display_mode", "day");
+                image.src = "daymode.png";
+                mode_button.classList.remove("mode_button_night");
+                mode_button.querySelector("h3").innerText = "DAY MODE";
+            }
+        }
+    </script>
+</body>
+
+</html>

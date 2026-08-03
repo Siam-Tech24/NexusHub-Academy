@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusHub Academy-Contacts</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="nightmode.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* main content  */
+
+        body {
+            transition: 0.3s ease-out;
+        }
+
+        article {
+            color: rgb(43, 5, 5);
+            width: 100%;
+            overflow-x: hidden;
+            transition: 0.3s ease-out
+        }
+
+        .section_breaker {
+            height: 10px;
+        }
+
+        .id_container {
+            color: rgb(43, 5, 5);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 10px;
+            justify-content: center;
+            align-items: stretch;
+            margin-top: 20px;
+
+        }
+
+        .id_card {
+            display: flex;
+            flex-direction: column;
+            width: 275px;
+            height: auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding-bottom: 20px;
+            opacity: 0;
+        }
+
+        .id_card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .id_card .header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .id_card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            background-color: #f5f5f5;
+            object-position: top;
+            display: block;
+        }
+
+        .id_card .details {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #222222;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .id_card .details h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: #111111;
+        }
+
+        .id_card .details h2 {
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin: 0;
+            color: #555555;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .id_card .details h2 span {
+            font-weight: 600;
+            color: #333333;
+            margin-right: 6px;
+        }
+
+        .id_card .details a {
+            color: #555555;
+        }
+
+        article h1 {
+            margin: 25px 5px;
+            text-align: center;
+        }
+
+        hr {
+            margin-bottom: 25px;
+        }
+
+        .card_intro {
+            animation: intro 2s forwards ease-out;
+        }
+
+        @keyframes intro {
+            from {
+                transform: translateX(50%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+
+
+
+        /* footer  */
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+
+        /* dark mode  */
+
+
+        .nightbody .id_card {
+            box-shadow: 0 0 5px white, 0 0 10px white;
+
+        }
+
+        .nightbody .id_card:hover {
+            box-shadow: 0 0 15px white, 0 0 15px white;
+        }
+
+
+        .nightbody article{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>NexusHub Academy</h1>
+            <div id="nav_button">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current_site"><a href="contacts.html">Contacts</a></li>
+                    <li><a href="courses.html">See Courses</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+            </div>
+            <button class="sidetoggle" id="sidetoggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="sidebarcontainer" id="sidebarcontainer">
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+                <li id="current_site">
+                    <a href="contacts.html">
+                        CONTACTS
+                    </a>
+                </li>
+                <li>
+                    <a href="courses.html">
+                        SEE COURSES
+                    </a>
+                </li>
+                <li>
+                    <a href="reviews.html">
+                        REVIEWS
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <script>
+        const sidetoggle = document.getElementById("sidetoggle");
+        const sidebar = document.getElementById("sidebar");
+
+        sidetoggle.addEventListener("click", () => {
+            sidetoggle.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        })
+    </script>
+    <main>
+        <div class="mode_container">
+            <button class="mode_button" onclick="mode_change()" id="mode_button">
+                <img src="daymode.png" alt="" id="mode_image">
+                <h3>DAY MODE</h3>
+            </button>
+        </div>
+        <div class="section_breaker"></div>
+        <article>
+            <h1>Contact The Owners of NexusHub Academy</h1>
+            <div class="section_breaker"></div>
+            <div class="id_container">
+
+                <div class="id_card">
+                    <div class="header">NexusHub Academy</div>
+
+                    <img src="Partners Pics/siyam.png" alt="Mehedi Hasan Siyam">
+
+                    <div class="details">
+                        <h1>Mehedi Hasan Siyam</h1>
+                        <h2><span>Role:</span> Founder, Shareholder, Instructor</h2>
+                        <h2><span>Subject:</span> Frontend Web Development</h2>
+                        <h2><span>Phone:</span> <a href="tel:+8801310104174">+8801310104174</a></h2>
+                        <h2><span>WhatsApp:</span> <a href="https://wa.me/+8801882614288">+8801882614288</a></h2>
+                    </div>
+                </div>
+                <div class="id_card">
+                    <div class="header">NexusHub Academy</div>
+
+                    <img src="Partners Pics/salamon.png" alt="Emeh Solomon ">
+
+                    <div class="details">
+                        <h1>Emeh Solomon </h1>
+                        <h2><span>Role:</span> Co-Founder, Shareholder, Instructor</h2>
+                        <h2><span>Subject:</span> AI engineering </h2>
+                        <h2><span>Phone:</span> <a href="tel:+2349011835649">+2349011835649</a></h2>
+                        <h2><span>WhatsApp:</span> <a href="https://wa.me/+2349011835649">+2349011835649</a></h2>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('card_intro');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.01
+                });
+
+                const allcards = document.querySelectorAll(".id_card");
+
+                allcards.forEach((card) => {
+                    observer.observe(card);
+                });
+            </script>
+        </article>
+    </main>
+    <div class="section_breaker"></div>
+    <div class="section_breaker"></div>
+    <footer>
+        &copy;2026 NexusHub Academy - All rights reserved
+    </footer>
+    <div class="section_breaker"></div>
+    <script>
+        let mode = localStorage.getItem("nexushub_academy_display_mode");
+        const image = document.getElementById("mode_image");
+        const mode_button = document.getElementById("mode_button");
+        const main = document.querySelector("main");
+
+
+        if (mode === "night") {
+            document.body.classList.add("nightbody");
+            image.src = "nightmode.png";
+            mode_button.classList.add("mode_button_night");
+            mode_button.querySelector("h3").innerText = "NIGHT MODE";
+        } else {
+            document.body.classList.remove("nightbody");
+            image.src = "daymode.png";
+            mode_button.classList.remove("mode_button_night");
+            mode_button.querySelector("h3").innerText = "DAY MODE";
+        }
+
+
+        function mode_change() {
+            let currentMode = localStorage.getItem("nexushub_academy_display_mode");
+
+
+            if (currentMode !== "night") {
+                document.body.classList.add("nightbody");
+                localStorage.setItem("nexushub_academy_display_mode", "night");
+                image.src = "nightmode.png";
+                mode_button.classList.add("mode_button_night");
+                mode_button.querySelector("h3").innerText = "NIGHT MODE";
+            } else {
+
+                document.body.classList.remove("nightbody");
+                localStorage.setItem("nexushub_academy_display_mode", "day");
+                image.src = "daymode.png";
+                mode_button.classList.remove("mode_button_night");
+                mode_button.querySelector("h3").innerText = "DAY MODE";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
