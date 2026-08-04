@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusHub Academy</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="nightmode.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
+        /* main section */
+
+        body {
+            transition: 0.3s ease-out;
+        }
+
+        article {
+            text-align: center;
+            color: rgb(43, 5, 5);
+            border: 1px solid transparent;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        main h2 {
+            text-decoration: underline;
+        }
+
+        .section_breaker {
+            height: 30px;
+        }
+
+        .part_breaker {
+            height: 20px;
+        }
+
+        article p {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        article span {
+            font-size: large;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
+        article h1 {
+            margin-bottom: 60px;
+            text-decoration: underline;
+        }
+
+        article h2 {
+            margin: 30px;
+            margin-top: 70px;
+        }
+
+        article h3 {
+            margin: 30px;
+        }
+
+        hr {
+            margin: 20px;
+        }
+
+        article ul {
+            display: inline-block;
+            text-align: left;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        article li {
+            list-style: none;
+            font-size: large;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .courses {
+            display: inline-block;
+            padding: 15px;
+            border-radius: 32px;
+            background-color: maroon;
+            font-size: larger;
+            color: white;
+            font-weight: bolder;
+            text-decoration: none;
+            transition: 0.3s ease-out;
+        }
+
+        .courses:hover {
+            transform: scale(1.2);
+        }
+
+        .text_intro {
+            animation: intro 1.5s forwards ease-out;
+        }
+
+        @keyframes intro {
+            from {
+                transform: translateY(20%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+        /* footer */
+
+        footer {
+            text-align: center;
+        }
+
+
+        /* night mode  */
+
+        .nightbody .courses {
+            background-color: transparent;
+            color: white;
+            background: linear-gradient(to right bottom, rgb(146, 48, 146), rgb(187, 185, 185), rgb(21, 27, 105));
+        }
+
+
+        .nightbody article {
+            color: white;
+            border: 1px solid grey;
+            box-shadow: 0 0 10px white, 0 0 5px white;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            padding-right: 10px;
+            padding-left: 10px;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>NexusHub Academy</h1>
+            <div id="nav_button">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="courses.html">See Courses</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li class="current_site"><a href="">Help</a></li>
+                </ul>
+            </div>
+            <button class="sidetoggle" id="sidetoggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="sidebarcontainer" id="sidebarcontainer">
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="contacts.html">
+                        CONTACTS
+                    </a>
+                </li>
+                <li>
+                    <a href="courses.html">
+                        SEE COURSES
+                    </a>
+                </li>
+                <li>
+                    <a href="reviews.html">
+                        REVIEWS
+                    </a>
+                </li>
+                <li id="current_site">
+                    <a href="guide.html">
+                        HELP
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    <script>
+        const sidetoggle = document.getElementById("sidetoggle");
+        const sidebar = document.getElementById("sidebar");
+
+        sidetoggle.addEventListener("click", () => {
+            sidetoggle.classList.toggle("active");
+            sidebar.classList.toggle("active");
+        })
+    </script>
+    <main>
+        <div class="mode_container">
+            <button class="mode_button" onclick="mode_change()" id="mode_button">
+                <img src="daymode.png" alt="" id="mode_image">
+                <h3>DAY MODE</h3>
+            </button>
+        </div>
+        <article>
+            <h1>
+                How to enroll in a course in NexusHub Academy
+            </h1>
+            <h2>First Step</h2>
+            <h3>Go to <a href="courses.html">Courses</a> and choose a course</h3>
+            <h3>Click <i>Enroll</i>, fill up the form and click submit - Your request will be saved in the database</h3>
+
+            <h2>
+                Next step
+            </h2>
+            <h3>
+                After your request is approved, you'll get a confirmation message in WhatsAPP. Confirm your request
+            </h3>
+
+            <h2>
+                Next step
+            </h2>
+            <h3>
+                After your request is confirmed, you will be added to your course batch in WhatsApp Group.
+            </h3>
+        </article>
+        <article>
+            <h1>
+                How to attend the classes
+            </h1>
+            <h3>
+                Download Zoom app. All the classes will be held in zoom and the meeting link will be sent in the
+                WhatsAPP Group.
+                Click it and join your everyday lesson
+                Important note will also be shared in the WhatsAPP group
+            </h3>
+        </article>
+    </main>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('text_intro');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.01
+        });
+
+        const allcards = document.querySelectorAll("article");
+
+        allcards.forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+    <div class="section_breaker"></div>
+    <div class="section_breaker"></div>
+    <hr>
+    <div class="section_breaker"></div>
+    <footer>
+        &copy;2026 NexusHub Academy - All rights reserved
+    </footer>
+    <div class="section_breaker"></div>
+
+    <script>
+        let mode = localStorage.getItem("nexushub_academy_display_mode");
+        const image = document.getElementById("mode_image");
+        const mode_button = document.getElementById("mode_button");
+        const main = document.querySelector("main");
+
+
+        if (mode === "night") {
+            document.body.classList.add("nightbody");
+            image.src = "nightmode.png";
+            mode_button.classList.add("mode_button_night");
+            mode_button.querySelector("h3").innerText = "NIGHT MODE";
+        } else {
+            document.body.classList.remove("nightbody");
+            image.src = "daymode.png";
+            mode_button.classList.remove("mode_button_night");
+            mode_button.querySelector("h3").innerText = "DAY MODE";
+        }
+
+
+        function mode_change() {
+            let currentMode = localStorage.getItem("nexushub_academy_display_mode");
+
+
+            if (currentMode !== "night") {
+                document.body.classList.add("nightbody");
+                localStorage.setItem("nexushub_academy_display_mode", "night");
+                image.src = "nightmode.png";
+                mode_button.classList.add("mode_button_night");
+                mode_button.querySelector("h3").innerText = "NIGHT MODE";
+            } else {
+
+                document.body.classList.remove("nightbody");
+                localStorage.setItem("nexushub_academy_display_mode", "day");
+                image.src = "daymode.png";
+                mode_button.classList.remove("mode_button_night");
+                mode_button.querySelector("h3").innerText = "DAY MODE";
+            }
+        }
+    </script>
+</body>
+
+</html>
