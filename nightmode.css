@@ -20,6 +20,10 @@
     transition: 0.3s ease-out;
 }
 
+.nightbody h3{
+    margin-top: 0px;
+}
+
 .mode_button_night {
     background-color: black;
     border: 2px solid white;
