@@ -241,6 +241,34 @@
         .submit_btn:hover {
             background-color: #e03e00;
         }
+
+
+        /* Spinner Loader */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Disabled button state */
+        .submit_btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
     </style>
 </head>
 
@@ -651,39 +679,55 @@
         }
 
         enrollForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+            e.preventDefault();
 
-    const data = {
-        fullname: document.getElementById("fullname").value,
-        country: document.getElementById("country").value,
-        whatsapp: document.getElementById("country_code").value +
-                  document.getElementById("whatsapp").value,
-        email: document.getElementById("email").value,
-        course: document.getElementById("course_name").innerText
-    };
+            const submitBtn = enrollForm.querySelector(".submit_btn");
+            const originalBtnText = submitBtn.innerHTML;
 
-    try {
-        const response = await fetch("https://nexushub-academy-server.onrender.com/api/enroll", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+            // Show loading spinner and disable button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span class="spinner"></span> Processing...`;
+
+            const code = document.getElementById("country_code").value;
+            const phone = document.getElementById("whatsapp").value;
+
+            const enrollmentData = {
+                fullname: document.getElementById("fullname").value,
+                country: document.getElementById("country").value,
+                whatsapp: code + phone,
+                email: document.getElementById("email").value,
+                course: document.getElementById("course_name").innerText
+            };
+
+            try {
+                const response = await fetch("https://nexushub-academy-server.onrender.com/api/enroll", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(enrollmentData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(result.message);
+                    enrollForm.reset();
+                    updateCountryCode();
+                    closeForm();
+                } else {
+                    alert("Something went wrong.");
+                }
+
+            } catch (error) {
+                console.error(error);
+                alert("Could not connect to the server.");
+            } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
         });
-
-        const result = await response.json();
-
-        alert(result.message);
-
-        enrollForm.reset();
-        updateCountryCode();
-        closeForm();
-
-    } catch (error) {
-        console.error(error);
-        alert("Could not connect to the server.");
-    }
-});
     </script>
 </body>
 
