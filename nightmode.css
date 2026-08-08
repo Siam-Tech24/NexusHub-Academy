@@ -67,3 +67,11 @@
 .nightbody header{
     background-color: #1E1E1E; 
 }
+
+.nightbody header .sidetoggle.active{
+    background-color: rgb(95, 95, 95);
+}
+
+.nightbody header .sidetoggle:hover{
+    background-color: rgb(95, 95, 95);
+}
