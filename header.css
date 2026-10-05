@@ -91,14 +91,14 @@ header nav {
 }
 
 .sidetoggle:hover {
-    background-color: rgb(65, 255, 74);
+    background-color: rgb(1, 1, 73);
     border: 2px solid white;
 }
 
 .sidetoggle.active {
     transform: rotate(-270deg);
     border: 2px solid white;
-    background-color: rgb(65, 255, 74);
+    background-color: rgb(1, 1, 73);
 }
 
 @media screen and (max-width:880px) {
