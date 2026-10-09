@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusHub Academy</title>
+    <title>NexusHub Academy - Help Guide</title>
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="nightmode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="icon" href="logo.png" type="image/x-icon">
     <style>
         * {
@@ -17,103 +18,206 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-
-
-        /* main section */
-
-  body {
+        /* Main Section */
+        body {
             transition: 0.3s ease-out;
-            background-image: linear-gradient(to right, rgba(244, 245, 247, 0.9), rgba(238, 244, 250, 0.9)), url("Screenshot_20260929_172449_TikTok.jpg");
-            height: auto;
+            background-image: linear-gradient(to right, rgba(244, 245, 247, 0.92), rgba(238, 244, 250, 0.92)), url("Screenshot_20260929_172449_TikTok.jpg");
+            min-height: 100vh;
             max-width: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: contain;
+            background-size: cover;
         }
 
-        article {
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-header {
             text-align: center;
-            color: rgb(5, 8, 43);
-            border: 1px solid transparent;
-            margin: 20px;
-            padding: 25px;
-            border-radius: 15px;
-            padding-right: 10px;
-            padding-left: 10px;
+            margin-bottom: 40px;
         }
 
-        main h2 {
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: rgb(5, 8, 43);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        .page-header p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* Guide Section Cards */
+        article {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            color: rgb(5, 8, 43);
+            border: 1px solid rgba(1, 1, 83, 0.15);
+            margin: 25px 0;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        article h1 {
+            font-size: 1.5rem;
+            color: rgb(5, 8, 43);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid rgba(2, 177, 177, 0.2);
+            padding-bottom: 12px;
+            text-decoration: none;
+        }
+
+        article h1 i {
+            background-color: rgba(2, 177, 177, 0.2);
+            color: rgb(2, 110, 110);
+            font-size: 22px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Step List Styling */
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            background: orangered;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 6px;
+        }
+
+        .step-content p, .step-content h3 a {
+            font-size: 0.98rem;
+            color: #444;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        .step-content a {
+            color: orangered;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .step-content a:hover {
             text-decoration: underline;
+        }
+
+        /* General content box for single items like Zoom / Payment */
+        .guide-text-box {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 1.02rem;
+            color: #333;
+            line-height: 1.6;
         }
 
         .section_breaker {
             height: 30px;
         }
 
-        .part_breaker {
-            height: 20px;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #444;
+            font-size: 0.95rem;
         }
 
-        article p {
-            font-size: large;
-            font-weight: bold;
-        }
-
-        article span {
-            font-size: large;
-            font-weight: bold;
-            text-decoration: line-through;
-        }
-
-        article h1 {
-            margin-bottom: 60px;
-            text-decoration: underline;
-        }
-
-        article h2 {
-            margin: 30px;
-            margin-top: 70px;
-        }
-
-        article h3 {
-            margin: 30px;
-        }
-
-        hr {
-            margin: 20px;
-        }
-
-        article ul {
-            display: inline-block;
-            text-align: left;
-            padding: 0;
-            margin: 0 auto;
-        }
-
-        article li {
-            list-style: none;
-            font-size: large;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .courses {
-            display: inline-block;
-            padding: 15px;
-            border-radius: 32px;
-            background-color: maroon;
-            font-size: larger;
+        /* Dark Mode Overrides */
+        .nightbody .page-header h1 {
             color: white;
-            font-weight: bolder;
-            text-decoration: none;
-            transition: 0.3s ease-out;
         }
 
-        .courses:hover {
-            transform: scale(1.2);
+        .nightbody .page-header p {
+            color: #ccc;
         }
 
+        .nightbody article {
+            background: rgba(20, 28, 48, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .nightbody article h1 {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nightbody article h1 i {
+            background-color: rgba(2, 177, 177, 0.4);
+            color: rgb(150, 230, 230);
+        }
+
+        .nightbody .step-item, 
+        .nightbody .guide-text-box {
+            background: rgba(25, 35, 60, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+        }
+
+        .nightbody .step-content h3 {
+            color: white;
+        }
+
+        .nightbody .step-content p, 
+        .nightbody .guide-text-box {
+            color: #ccc;
+        }
+
+        .nightbody .step-content a {
+            color: #ff7b54;
+        }
+
+        /* Animation */
         .text_intro {
             animation: intro 1.5s forwards ease-out;
         }
@@ -123,39 +227,10 @@
                 transform: translateY(20%);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0%);
                 opacity: 1;
             }
-        }
-
-        /* footer */
-
-        footer {
-            text-align: center;
-        }
-
-
-        /* night mode  */
-
-        .nightbody .courses {
-            background-color: transparent;
-            color: white;
-            background: linear-gradient(to right bottom, rgb(146, 48, 146), rgb(187, 185, 185), rgb(21, 27, 105));
-        }
-
-
-        .nightbody article {
-            color: white;
-            border: 1px solid grey;
-            box-shadow: 0 0 10px white, 0 0 5px white;
-            margin: 20px;
-            padding: 25px;
-            border-radius: 15px;
-            padding-right: 10px;
-            padding-left: 10px;
-            opacity: 0;
         }
     </style>
 </head>
@@ -163,7 +238,7 @@
 <body>
     <header>
         <nav>
-               <div class="logo_container">
+            <div class="logo_container">
                 <img src="logo.png" alt="NexusHub Academy Logo">
                 <h1>NexusHub<span>Academy</span></h1>
             </div>
@@ -173,7 +248,7 @@
                     <li><a href="contacts.html">Contacts</a></li>
                     <li><a href="courses.html">See Courses</a></li>
                     <li><a href="reviews.html">Reviews</a></li>
-                    <li class="current_site"><a href="">Help</a></li>
+                    <li class="current_site"><a href="guide.html">Help</a></li>
                 </ul>
             </div>
             <button class="sidetoggle" id="sidetoggle">
@@ -186,29 +261,11 @@
     <div class="sidebarcontainer" id="sidebarcontainer">
         <aside class="sidebar" id="sidebar">
             <ul>
-                <li>
-                    <a href="index.html">HOME</a>
-                </li>
-                <li>
-                    <a href="contacts.html">
-                        CONTACTS
-                    </a>
-                </li>
-                <li>
-                    <a href="courses.html">
-                        SEE COURSES
-                    </a>
-                </li>
-                <li>
-                    <a href="reviews.html">
-                        REVIEWS
-                    </a>
-                </li>
-                <li id="current_site">
-                    <a href="guide.html">
-                        HELP
-                    </a>
-                </li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="contacts.html">CONTACTS</a></li>
+                <li><a href="courses.html">SEE COURSES</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li id="current_site"><a href="guide.html">HELP</a></li>
             </ul>
         </aside>
     </div>
@@ -219,60 +276,71 @@
         sidetoggle.addEventListener("click", () => {
             sidetoggle.classList.toggle("active");
             sidebar.classList.toggle("active");
-        })
+        });
     </script>
+
     <main>
-        <div class="mode_container">
+        <div class="mode_container" style="text-align: right; margin-bottom: 20px;">
             <button class="mode_button" onclick="mode_change()" id="mode_button">
-                <img src="daymode.png" alt="" id="mode_image">
-                <h3>DAY MODE</h3>
+                <img src="daymode.png" alt="" id="mode_image" style="width: 20px; vertical-align: middle;">
+                <h3 style="display: inline; font-size: 0.9rem; margin-left: 5px;">DAY MODE</h3>
             </button>
         </div>
-        <article>
-            <h1>
-                How to enroll in a course in NexusHub Academy
-            </h1>
-            <h2>First Step</h2>
-            <h3>Go to <a href="courses.html">Courses</a> and choose a course</h3>
-            <h3>Click <i>Enroll</i>, fill up the form and click submit - Your request will be saved in the database</h3>
 
-            <h2>
-                Next step
-            </h2>
-            <h3>
-                After your request is approved, you'll get a confirmation message in WhatsApp. Confirm your request
-            </h3>
+        <div class="page-header">
+            <h1>Student Help & <span class="blue" style="color: rgb(29, 154, 185);">Guide</span></h1>
+            <p>Everything you need to know about enrollment, classes, and payments.</p>
+        </div>
 
-            <h2>
-                Next step
-            </h2>
-            <h3>
-                After your request is confirmed, you will be added to your course batch in WhatsApp Group.
-            </h3>
-        </article>
         <article>
-            <h1>
-                How to attend the classes
-            </h1>
-            <h3>
-                Download Zoom app. All the classes will be held in zoom and the meeting link will be sent in the
-                WhatsApp Group.
-                Click it and join your everyday lesson.
-                Important note will also be shared in the WhatsApp group
-            </h3>
+            <h1><i class="fa-solid fa-user-plus"></i> How to Enroll in a Course</h1>
+            <div class="step-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Your Course</h3>
+                        <p>Go to <a href="courses.html">Courses</a> and pick the course you want to join.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Submit Your Registration</h3>
+                        <p>Click <i>Enroll Now</i>, fill out the application form with your details, and submit it to save your request in our database.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>WhatsApp Confirmation</h3>
+                        <p>Once your request is reviewed and approved, you'll receive a confirmation message on WhatsApp. Confirm your request to proceed.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Batch Assignment</h3>
+                        <p>After confirmation, you will be successfully added to your course batch WhatsApp Group.</p>
+                    </div>
+                </div>
+            </div>
         </article>
+
         <article>
-            <h1>
-                How to do the Payments
-            </h1>
-            <h3>
-                Every student will get 1 week free lessons before payment. After those 1 week lesson, you can choose to
-                whether join the full course or not. You can do the payment using bKash(If from Bangladesh) or send it
-                in the instructors bank account(If
-                not from Bangladesh)
-            </h3>
+            <h1><i class="fa-solid fa-video"></i> How to Attend Classes</h1>
+            <div class="guide-text-box">
+                Download the <strong>Zoom</strong> app on your device. All live interactive lessons will be hosted on Zoom, and meeting links will be shared directly in your WhatsApp batch group. Simply click the link to join your daily lessons. Important class notices and notes will also be posted there.
+            </div>
+        </article>
+
+        <article>
+            <h1><i class="fa-solid fa-credit-card"></i> Payment Guidelines</h1>
+            <div class="guide-text-box">
+                Every student enjoys a <strong>1-week free trial</strong> before any payment is required. After the trial week, you can choose whether or not to continue with the full course. Payments can easily be made via <strong>bKash</strong> (if you are joining from Bangladesh) or sent directly to the instructor's bank account (if you are joining internationally).
+            </div>
         </article>
     </main>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -286,14 +354,13 @@
         });
 
         const allcards = document.querySelectorAll("article");
-
         allcards.forEach((card) => {
             observer.observe(card);
         });
     </script>
+
     <div class="section_breaker"></div>
-    <div class="section_breaker"></div>
-    <hr>
+    <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 0 40px;">
     <div class="section_breaker"></div>
     <footer>
         &copy;2026 NexusHub Academy - All rights reserved
@@ -304,38 +371,29 @@
         let mode = localStorage.getItem("nexushub_academy_display_mode");
         const image = document.getElementById("mode_image");
         const mode_button = document.getElementById("mode_button");
-        const main = document.querySelector("main");
-
 
         if (mode === "night") {
             document.body.classList.add("nightbody");
             image.src = "nightmode.png";
-            mode_button.classList.add("mode_button_night");
             mode_button.querySelector("h3").innerText = "NIGHT MODE";
         } else {
             document.body.classList.remove("nightbody");
             image.src = "daymode.png";
-            mode_button.classList.remove("mode_button_night");
             mode_button.querySelector("h3").innerText = "DAY MODE";
         }
 
-
         function mode_change() {
             let currentMode = localStorage.getItem("nexushub_academy_display_mode");
-
 
             if (currentMode !== "night") {
                 document.body.classList.add("nightbody");
                 localStorage.setItem("nexushub_academy_display_mode", "night");
                 image.src = "nightmode.png";
-                mode_button.classList.add("mode_button_night");
                 mode_button.querySelector("h3").innerText = "NIGHT MODE";
             } else {
-
                 document.body.classList.remove("nightbody");
                 localStorage.setItem("nexushub_academy_display_mode", "day");
                 image.src = "daymode.png";
-                mode_button.classList.remove("mode_button_night");
                 mode_button.querySelector("h3").innerText = "DAY MODE";
             }
         }
