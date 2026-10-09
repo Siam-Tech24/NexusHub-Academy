@@ -21,20 +21,15 @@
         /* Main Section */
         body {
             transition: 0.3s ease-out;
-            background-image: linear-gradient(to right, rgba(244, 245, 247, 0.92), rgba(238, 244, 250, 0.92)), url("Screenshot_20260929_172449_TikTok.jpg");
-            min-height: 100vh;
+            background-image: linear-gradient(to right, rgba(244, 245, 247, 0.9), rgba(238, 244, 250, 0.9)), url("Screenshot_20260929_172449_TikTok.jpg");
+            height: auto;
             max-width: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: cover;
+            background-size: contain;
         }
 
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
 
         .page-header {
             text-align: center;
@@ -60,11 +55,13 @@
             backdrop-filter: blur(10px);
             color: rgb(5, 8, 43);
             border: 1px solid rgba(1, 1, 83, 0.15);
-            margin: 25px 0;
+            margin: 25px auto;
             padding: 30px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 990px;
+
         }
 
         article:hover {
@@ -131,7 +128,8 @@
             margin-bottom: 6px;
         }
 
-        .step-content p, .step-content h3 a {
+        .step-content p,
+        .step-content h3 a {
             font-size: 0.98rem;
             color: #444;
             font-weight: normal;
@@ -145,6 +143,16 @@
         }
 
         .step-content a:hover {
+            text-decoration: underline;
+        }
+
+        .guide-text-box a {
+            color: orangered;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .guide-text-box a:hover {
             text-decoration: underline;
         }
 
@@ -197,7 +205,7 @@
             color: rgb(150, 230, 230);
         }
 
-        .nightbody .step-item, 
+        .nightbody .step-item,
         .nightbody .guide-text-box {
             background: rgba(25, 35, 60, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -208,7 +216,7 @@
             color: white;
         }
 
-        .nightbody .step-content p, 
+        .nightbody .step-content p,
         .nightbody .guide-text-box {
             color: #ccc;
         }
@@ -227,6 +235,7 @@
                 transform: translateY(20%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0%);
                 opacity: 1;
@@ -280,10 +289,10 @@
     </script>
 
     <main>
-        <div class="mode_container" style="text-align: right; margin-bottom: 20px;">
+        <div class="mode_container">
             <button class="mode_button" onclick="mode_change()" id="mode_button">
-                <img src="daymode.png" alt="" id="mode_image" style="width: 20px; vertical-align: middle;">
-                <h3 style="display: inline; font-size: 0.9rem; margin-left: 5px;">DAY MODE</h3>
+                <img src="daymode.png" alt="" id="mode_image">
+                <h3>DAY MODE</h3>
             </button>
         </div>
 
@@ -306,14 +315,16 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Submit Your Registration</h3>
-                        <p>Click <i>Enroll Now</i>, fill out the application form with your details, and submit it to save your request in our database.</p>
+                        <p>Click <i>Enroll Now</i>, fill out the application form with your details, and submit it to
+                            save your request in our database.</p>
                     </div>
                 </div>
                 <div class="step-item">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>WhatsApp Confirmation</h3>
-                        <p>Once your request is reviewed and approved, you'll receive a confirmation message on WhatsApp. Confirm your request to proceed.</p>
+                        <p>Once your request is reviewed and approved, you'll receive a confirmation message on
+                            WhatsApp. Confirm your request to proceed.</p>
                     </div>
                 </div>
                 <div class="step-item">
@@ -329,22 +340,31 @@
         <article>
             <h1><i class="fa-solid fa-video"></i> How to Attend Classes</h1>
             <div class="guide-text-box">
-                Download the <strong>Zoom</strong> app on your device. All live interactive lessons will be hosted on Zoom, and meeting links will be shared directly in your WhatsApp batch group. Simply click the link to join your daily lessons. Important class notices and notes will also be posted there.
+                Download the <strong>Zoom</strong> app on your device. All live interactive lessons will be hosted on
+                Zoom, and meeting links will be shared directly in your WhatsApp batch group. Simply click the link to
+                join your daily lessons. Important class notices and notes will also be posted there.
             </div>
         </article>
 
         <article>
             <h1><i class="fa-solid fa-credit-card"></i> Payment Guidelines</h1>
             <div class="guide-text-box">
-                Every student enjoys a <strong>1-week free trial</strong> before any payment is required. After the trial week, you can choose whether or not to continue with the full course. Payments can easily be made via <strong>bKash</strong> (if you are joining from Bangladesh) or sent directly to the instructor's bank account (if you are joining internationally).
+                Every student enjoys a <strong>1-week free trial</strong> before any payment is required. After the
+                trial week, you can choose whether or not to continue with the full course. Payments can easily be made
+                via <strong>bKash</strong> (if you are joining from Bangladesh) or sent directly to the instructor's
+                bank account (if you are joining internationally).
             </div>
         </article>
         <article>
             <h1><i class="fa-solid fa-circle-question"></i> Need More Help?</h1>
             <div class="guide-text-box">
-                If you have any questions or need further assistance, please reach out to us through our <a
-                    href="contacts.html">Contact Page</a>. We are here to help you with any issues or concerns you may
-                have regarding enrollment, classes, or payments.
+                <p>
+
+                    If you have any questions or need further assistance, please reach out to us through our <a
+                        href="contacts.html">Contact Page</a>. We are here to help you with any issues or concerns you
+                    may
+                    have regarding enrollment, classes, or payments.
+                </p>
             </div>
         </article>
     </main>
@@ -379,29 +399,38 @@
         let mode = localStorage.getItem("nexushub_academy_display_mode");
         const image = document.getElementById("mode_image");
         const mode_button = document.getElementById("mode_button");
+        const main = document.querySelector("main");
+
 
         if (mode === "night") {
             document.body.classList.add("nightbody");
             image.src = "nightmode.png";
+            mode_button.classList.add("mode_button_night");
             mode_button.querySelector("h3").innerText = "NIGHT MODE";
         } else {
             document.body.classList.remove("nightbody");
             image.src = "daymode.png";
+            mode_button.classList.remove("mode_button_night");
             mode_button.querySelector("h3").innerText = "DAY MODE";
         }
 
+
         function mode_change() {
             let currentMode = localStorage.getItem("nexushub_academy_display_mode");
+
 
             if (currentMode !== "night") {
                 document.body.classList.add("nightbody");
                 localStorage.setItem("nexushub_academy_display_mode", "night");
                 image.src = "nightmode.png";
+                mode_button.classList.add("mode_button_night");
                 mode_button.querySelector("h3").innerText = "NIGHT MODE";
             } else {
+
                 document.body.classList.remove("nightbody");
                 localStorage.setItem("nexushub_academy_display_mode", "day");
                 image.src = "daymode.png";
+                mode_button.classList.remove("mode_button_night");
                 mode_button.querySelector("h3").innerText = "DAY MODE";
             }
         }
