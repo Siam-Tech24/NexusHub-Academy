@@ -38,7 +38,7 @@
             text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
         }
 
-        .blue{
+        .blue {
             color: rgb(29, 154, 185)
         }
 
@@ -61,7 +61,7 @@
             flex-wrap: nowrap;
         }
 
-        .icon{
+        .icon {
             height: 100%;
             background-color: rgba(2, 177, 177, 0.5);
             font-size: 40px;
@@ -71,6 +71,48 @@
 
         .icon_container p {
             text-align: start;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(1, 1, 83, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card .icon-small {
+            font-size: 20px;
+            background-color: rgba(2, 177, 177, 0.5);
+            padding: 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 600;
         }
 
         article {
@@ -185,6 +227,22 @@
             padding-left: 10px;
             opacity: 0;
         }
+
+
+        .nightbody .feature-card {
+            background-color: rgba(25, 35, 60, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .nightbody .feature-card:hover {
+            background-color: rgba(35, 48, 80, 0.9);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .nightbody .feature-card .icon-small {
+            background-color: rgba(2, 177, 177, 0.4);
+            color: rgb(150, 230, 230);
+        }
     </style>
 </head>
 
@@ -272,7 +330,8 @@
             <div class="part_breaker"></div>
             <div class="icon_container">
                 <i class="fa-solid fa-graduation-cap icon"></i>
-                <p>Whether you're a school student or a complete beginner, we'll help you build real projects from scratch
+                <p>Whether you're a school student or a complete beginner, we'll help you build real projects from
+                    scratch
                 </p>
             </div>
             <div class="part_breaker"></div>
@@ -303,17 +362,31 @@
         <div class="section_breaker"></div>
         <hr>
         <div class="section_breaker"></div>
-        <article>
-
-
+        <article class="why-choose-article">
             <h2>Why Choose NexusHub <i class="blue">Academy</i>?</h2>
-            <ul>
-                <li>Practical projects✅</li>
-                <li>Online learning✅</li>
-                <li>beginner-friendly✅</li>
-                <li>Live classes✅</li>
-                <li>1 week free trial✅</li>
-            </ul>
+            <div class="part_breaker"></div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-laptop-code icon-small"></i>
+                    <p>Practical Projects</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-globe icon-small"></i>
+                    <p>Online Learning</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-seedling icon-small"></i>
+                    <p>Beginner-Friendly</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-video icon-small"></i>
+                    <p>Live Classes</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-gift icon-small"></i>
+                    <p>1 Week Free Trial</p>
+                </div>
+            </div>
         </article>
 
         <div class="section_breaker"></div>
@@ -324,9 +397,11 @@
             <h2>Who can join?</h2>
             <div class="icon_container">
                 <i class="fa-solid fa-user-graduate icon"></i>
-                <p>Regardless of your age or exprience, you can join our course and start learning. When you buy our course,
+                <p>Regardless of your age or exprience, you can join our course and start learning. When you buy our
+                    course,
                     you
-                    dont only buy the lessons, you buy future and skills that will help you to keep up with the modern world
+                    dont only buy the lessons, you buy future and skills that will help you to keep up with the modern
+                    world
                 </p>
             </div>
         </article>
@@ -335,13 +410,13 @@
         <div class="section_breaker"></div>
         <article>
             <h2>Our <i class="blue">Mission</i></h2>
-                <p>
-                    At NexusHub Academy, we believe quality tech education should be accessible to everyone.
-    
-                    Our goal is not only to teach programming but to help students develop real-world skills through
-                    practical
-                    experience and project-based learning
-                </p>
+            <p>
+                At NexusHub Academy, we believe quality tech education should be accessible to everyone.
+
+                Our goal is not only to teach programming but to help students develop real-world skills through
+                practical
+                experience and project-based learning
+            </p>
         </article>
 
     </main>
