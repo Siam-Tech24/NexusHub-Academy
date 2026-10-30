@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="nightmode.css">
     <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -20,7 +22,7 @@
 
         /* main content  */
 
-         body {
+        body {
             transition: 0.3s ease-out;
             background-image: linear-gradient(to right, rgba(244, 245, 247, 0.9), rgba(238, 244, 250, 0.9)), url("Screenshot_20260929_172449_TikTok.jpg");
             height: auto;
@@ -31,7 +33,7 @@
             background-size: contain;
         }
 
-       main h1{
+        main h1 {
             font-family: 'Playfair Display', serif;
         }
 
@@ -160,6 +162,37 @@
             }
         }
 
+        .page_container {
+            display: flex;
+        }
+
+        .page {
+            align-self: center;
+            margin: 50px auto;
+            display: flex;
+            font-size: 22px;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
+            max-width: 580px;
+            background-color: #1877F2;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 32px;
+            transition: 0.3s ease-out;
+        }
+
+        .page i{
+            margin: 5px;
+            font-size: 30px;
+            margin-right: 15px;
+        }
+        
+        .page:hover, .page:focus{
+            box-shadow: 0 0 10px cyan, 0 0 5px cyan;
+        }
+
 
 
         /* footer  */
@@ -193,7 +226,7 @@
 <body>
     <header>
         <nav>
-          <div class="logo_container">
+            <div class="logo_container">
                 <img src="logo.png" alt="NexusHub Academy Logo">
                 <h1>NexusHub<span>Academy</span></h1>
             </div>
@@ -260,7 +293,7 @@
         </div>
         <div class="section_breaker"></div>
         <article>
-           <h1>Contact The Owners of NexusHub <span class="blue">Academy</span></h1>
+            <h1>Contact The Owners of NexusHub <span class="blue">Academy</span></h1>
             <div class="section_breaker"></div>
             <div class="id_container">
 
@@ -290,6 +323,9 @@
                         <h2><span>WhatsApp:</span> <a href="https://wa.me/+2349011835649">+2349011835649</a></h2>
                     </div>
                 </div>
+            </div>
+            <div class="page_container">
+                <a href="https://www.facebook.com/share/1CuYeGqfGu/" class="page"><i class="fa-brands fa-facebook"></i> NexusHub Academy Page</a>
             </div>
             <script>
                 const observer = new IntersectionObserver((entries) => {
