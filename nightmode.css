@@ -2,9 +2,13 @@
     margin: 20px;
     display: flex;
     justify-content: flex-end;
+    position: sticky;
+    top: 110px;
+    z-index: 1000;
+    pointer-events: none;
 }
 
-.nightbody{
+.nightbody {
     background-image: none;
 }
 
@@ -22,9 +26,10 @@
     gap: 15px;
     padding-right: 30px;
     transition: 0.3s ease-out;
+    pointer-events: auto;
 }
 
-.nightbody h3{
+.nightbody h3 {
     margin-top: 0px;
 }
 
@@ -66,15 +71,15 @@
     display: none;
 }
 
-.nightbody header{
+.nightbody header {
     background-color: #1E1E1E;
     border-bottom: 3px solid rgb(38, 180, 216);
 }
 
-.nightbody header .sidetoggle.active{
+.nightbody header .sidetoggle.active {
     background-color: rgb(95, 95, 95);
 }
 
-.nightbody header .sidetoggle:hover{
+.nightbody header .sidetoggle:hover {
     background-color: rgb(95, 95, 95);
 }
