@@ -17,6 +17,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
         }
 
 
@@ -32,6 +33,37 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: contain;
+        }
+
+        .hero {
+            display: block;
+            margin: 0;
+            background-image: linear-gradient(to right, rgba(0, 14, 43, 0.9), rgba(0, 118, 236, 0.4)), url("hero_image.png");
+            background-size: cover;
+            width: 100%;
+            min-height: 33vh;
+            height: 250px;
+            background-position: right;
+            margin: 0;
+            padding: 15px;
+            background-repeat: no-repeat;
+            border-bottom: 3px solid rgb(38, 180, 216);
+        }
+
+        .hero_text .blue{
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero_text {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .hero h1,
+        .hero h2 {
+            text-align: start;
+            color: white;
+            margin-left: 10px;
         }
 
         main {
@@ -124,6 +156,7 @@
             border-radius: 15px;
             padding-right: 10px;
             padding-left: 10px;
+            margin-top: 5px;
         }
 
         .section_breaker {
@@ -223,7 +256,7 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
             color: white;
             margin: 20px;
-            padding: 25px;
+            padding: 35px;
             border-radius: 15px;
             padding-right: 10px;
             padding-left: 10px;
@@ -310,6 +343,15 @@
         })
     </script>
     <main>
+        <div class="hero">
+            <div class="hero_text">
+                <h1>Welcome to</h1>
+                <h1>NexusHub <i class="blue">Academy</i></h1>
+                <div class="section_breaker"></div>
+                <h2>Learn Today's Skills</h2>
+                <h2>Build Tomorrow's <i class="blue">Career</i></h2>
+            </div>
+        </div>
         <div class="mode_container">
             <button class="mode_button" onclick="mode_change()" id="mode_button">
                 <img src="daymode.png" alt="" id="mode_image">
@@ -318,10 +360,6 @@
         </div>
 
         <article>
-            <h1>Welcome to</h1>
-            <h1>NexusHub <i class="blue">Academy</i></h1>
-            <div class="section_breaker"></div>
-            <h2>Learn Today's Skills. Build Tomorrow's <i class="blue">Career</i></h2>
             <div class="part_breaker"></div>
             <div class="icon_container">
                 <i class="fa-solid fa-code icon"></i>
