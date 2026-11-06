@@ -211,10 +211,36 @@
             font-weight: bolder;
             text-decoration: none;
             transition: 0.3s ease-out;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.568);
         }
+
+        .courses::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: 0.4s ease-out;
+            border-radius: 32px;
+        }
+
 
         .courses:hover {
             transform: scale(1.2);
+            color: rgb(5, 8, 43);
+        }
+
+        .courses:hover::before{
+            transform: scaleX(1);
         }
 
         .text_intro {
@@ -247,6 +273,15 @@
             color: white;
             background-color: rgb(14, 14, 122);
             border: 1px solid rgb(153, 153, 255);
+        }
+
+
+        .nightbody .courses:hover{
+            color:rgb(204, 204, 204);
+        }
+
+        .nightbody .courses::before{
+            background-color:  rgb(29, 154, 185);
         }
 
 
