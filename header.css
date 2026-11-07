@@ -8,8 +8,23 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
-    border-bottom: 3px solid rgb(38, 180, 216);
+    border-bottom: 3px solid rgba(38, 180, 216, 0);
+    animation: header_glow 2s forwards;
 }
+
+@keyframes header_glow {
+    from{
+        border-bottom: 3px solid rgba(38, 180, 216, 0);
+        box-shadow: 0 8px 6px -6px rgba(38, 180, 216, 0);
+    }
+
+    to{
+        border-bottom: 3px solid rgba(38, 180, 216, 1);
+        box-shadow: 0 8px 6px -6px rgba(38, 180, 216, 1);
+    }
+}
+
+
 
 
 .logo_container{
